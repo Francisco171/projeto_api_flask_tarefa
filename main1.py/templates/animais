@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela ANIMAIS</title>
+</head>
+<body>
+    <h1>Tabela ANIMAIS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Espécie</th>
+            <th>Data de Nascimento</th>
+            <th>ID do Cliente</th>
+        </tr>
+        <!-- Preencha a tabela com os dados do banco de dados -->
+        <tr>
+            <td>1</td>
+            <td>Animal 1</td>
+            <td>Cão</td>
+            <td>2020-01-15</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Animal 2</td>
+            <td>Gato</td>
+            <td>2019-05-20</td>
+            <td>1</td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </table>
+</body>
+</html>

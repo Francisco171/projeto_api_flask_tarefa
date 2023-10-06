@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela CLIENTES</title>
+</head>
+<body>
+    <h1>Tabela CLIENTES</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Contato</th>
+        </tr>
+        <!-- Preencha a tabela com os dados do banco de dados -->
+        <tr>
+            <td>1</td>
+            <td>Cliente 1</td>
+            <td>Endereço 1</td>
+            <td>Contato 1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Cliente 2</td>
+            <td>Endereço 2</td>
+            <td>Contato 2</td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </table>
+</body>
+</html>
