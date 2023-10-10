@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela CLIENTES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db; /* Azul */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7dc6f; /* Amarelo */
+        }
+
+        tr:hover {
+            background-color: #ecf0f1; /* Cinza claro */
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #2ecc71; /* Verde */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #27ae60; /* Verde mais escuro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela CLIENTES</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Contato</th>
+            <th>Ações</th>
+        </tr>
+        <!-- Preencha a tabela com os dados do banco de dados usando Flask -->
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.idCLIENTE }}</td>
+            <td>{{ cliente.Nome }}</td>
+            <td>{{ cliente.Endereco }}</td>
+            <td>{{ cliente.Contato }}</td>
+            <td>
+                <a href="/editar/{{ cliente.idCLIENTE }}">Editar</a> |
+                <a href="/excluir/{{ cliente.idCLIENTE }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="button-container">
+        <a href="/novo" class="button">Novo Cliente</a>
+    </div>
+</body>
+</html>
+
+
+
+
+// <!DOCTYPE html>
+// <html>
+// <head>
+//     <title>Tabela CLIENTES</title>
+// </head>
+// <body>
+//     <h1>Tabela CLIENTES</h1>
+//     <table>
+//         <tr>
+//             <th>ID</th>
+//             <th>Nome</th>
+//             <th>Endereço</th>
+//             <th>Contato</th>
+//         </tr>
+//         <!-- Preencha a tabela com os dados do banco de dados -->
+//         <tr>
+//             <td>1</td>
+//             <td>Cliente 1</td>
+//             <td>Endereço 1</td>
+//             <td>Contato 1</td>
+//         </tr>
+//         <tr>
+//             <td>2</td>
+//             <td>Cliente 2</td>
+//             <td>Endereço 2</td>
+//             <td>Contato 2</td>
+//         </tr>
+//         <!-- Adicione mais linhas conforme necessário -->
+//     </table>
+// </body>
+// </html>

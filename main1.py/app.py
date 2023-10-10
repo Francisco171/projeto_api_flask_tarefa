@@ -1,23 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template,jsonify
 import mysql.connector
-
-app = Flask(__name__)
 
 # Configurações do banco de dados
 db_config = {
     "host": "localhost",
     "user": "root",
     "password": "1234567",
-    "database": "mydb",  # Nome do banco de dados
+    "database": "mydb",
 }
 
-# Função para criar uma conexão com o banco de dados
+# Função para obter uma conexão com o banco de dados
 def get_db_connection():
     return mysql.connector.connect(**db_config)
 
+app = Flask(__name__)
+
 # Rota para listar todos os clientes
 @app.route('/clientes', methods=['GET'])
-def get_clientes():
+def listar_clientes():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -25,9 +25,9 @@ def get_clientes():
         clientes = cursor.fetchall()
         cursor.close()
         conn.close()
-        return jsonify(clientes)
+        return render_template("clientes.html", clientes=clientes)
     except Exception as e:
-        return jsonify({"error": str(e)})
+        return render_template("error.html", error=str(e))
 
 # Rota para criar um novo cliente
 @app.route('/clientes', methods=['POST'])
@@ -77,7 +77,7 @@ def excluir_cliente(id):
 
 # Rota para listar todos os animais
 @app.route('/animais', methods=['GET'])
-def get_animais():
+def listar_animais():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -85,9 +85,9 @@ def get_animais():
         animais = cursor.fetchall()
         cursor.close()
         conn.close()
-        return jsonify(animais)
+        return render_template("animais.html", animais=animais)
     except Exception as e:
-        return jsonify({"error": str(e)})
+        return render_template("error.html", error=str(e))
 
 # Rota para criar um novo animal
 @app.route('/animais', methods=['POST'])
@@ -137,3 +137,4 @@ def excluir_animal(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

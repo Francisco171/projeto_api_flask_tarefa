@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela ANIMAIS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e74c3c; /* Vermelho */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #3498db; /* Azul */
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #ecf0f1; /* Cinza claro */
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #2ecc71; /* Verde */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #27ae60; /* Verde mais escuro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela ANIMAIS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Espécie</th>
+            <th>Data de Nascimento</th>
+            <th>ID do Cliente</th>
+            <th>Ações</th>
+        </tr>
+        <!-- Preencha a tabela com os dados do banco de dados usando Flask -->
+        {% for animal in animais %}
+        <tr>
+            <td>{{ animal.idANIMAL }}</td>
+            <td>{{ animal.Nome }}</td>
+            <td>{{ animal.Especie }}</td>
+            <td>{{ animal.Data_Nascimento }}</td>
+            <td>{{ animal.idCliente }}</td>
+            <td>
+                <a href="/editar/{{ animal.idANIMAL }}">Editar</a> |
+                <a href="/excluir/{{ animal.idANIMAL }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="button-container">
+        <a href="/novo_animal" class="button">Novo Animal</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela ANIMAIS</title>
+</head>
+<body>
+    <h1>Tabela ANIMAIS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Espécie</th>
+            <th>Data de Nascimento</th>
+            <th>ID do Cliente</th>
+        </tr>
+        <!-- Preencha a tabela com os dados do banco de dados -->
+        <!-- <tr>
+            <td>1</td>
+            <td>Animal 1</td>
+            <td>Cão</td>
+            <td>2020-01-15</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Animal 2</td>
+            <td>Gato</td>
+            <td>2019-05-20</td>
+            <td>1</td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </table>
+</body>
+</html> --> -->
